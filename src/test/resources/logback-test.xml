@@ -1,0 +1,43 @@
+<configuration>
+
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoders are assigned the type
+	 ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+		<encoder>
+			<!--<pattern>demo-TEST>%d{ISO8601} [%-5level] [%-1thread] [%-1.5X{req.requestId}] [%-1X{req.remoteHost}] [%-1X{req.method}] [%-1X{req.requestURI}] [%logger{36}] - %msg%n</pattern>-->
+			<pattern>[%logger{36}] - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="file" class="ch.qos.logback.core.FileAppender">
+		<!-- log in log4j xml format -->
+		<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+			<layout class="ch.qos.logback.classic.log4j.XMLLayout">
+				<properties>true</properties>
+				<locationInfo>true</locationInfo>
+			</layout>
+		</encoder>
+		<!-- for logging in pattern format see console logger above -->
+		<!-- log to %TEMP%/concert-test.log -->
+		<file>${tmp}/demo-test.log</file>
+	</appender>
+
+	<logger name="org" level="warn"/>
+	<logger name="org.hibernate.SQL" level="off"/>
+	<logger name="org.springframework" level="warn"/>
+	<logger name="org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver" level="debug"/>
+
+	<logger name="com.ncr" level="debug"/>
+
+<!--
+	<logger name="org.springframework.security" level="debug"/>
+	<logger name="org.springframework.ldap" level="debug"/>
+-->
+
+	<root level="info">
+		<appender-ref ref="console"/>
+		<!-- enable to log to file -->
+		<!--<appender-ref ref="file" />-->
+	</root>
+
+</configuration>
