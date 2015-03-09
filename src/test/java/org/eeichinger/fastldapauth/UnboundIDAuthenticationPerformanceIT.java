@@ -1,4 +1,6 @@
-import config.UnboundIDSecurityTestConfiguration;
+package org.eeichinger.fastldapauth;
+
+import org.eeichinger.fastldapauth.config.UnboundIDSecurityTestConfiguration;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -9,6 +11,5 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = UnboundIDSecurityTestConfiguration.class)
-public class UnboundIDAuthenticationPerformanceIT extends AbstractAuthenticationPerformanceTests
-{
+public class UnboundIDAuthenticationPerformanceIT extends AbstractAuthenticationPerformanceTests {
 }

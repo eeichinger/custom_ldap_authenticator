@@ -1,4 +1,6 @@
-import config.StandardSecurityTestConfiguration;
+package org.eeichinger.fastldapauth;
+
+import org.eeichinger.fastldapauth.config.StandardSecurityTestConfiguration;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -9,6 +11,5 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = StandardSecurityTestConfiguration.class)
-public class StandardAuthenticationPerformanceIT extends AbstractAuthenticationPerformanceTests
-{
+public class StandardAuthenticationPerformanceIT extends AbstractAuthenticationPerformanceTests {
 }
